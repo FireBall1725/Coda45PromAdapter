@@ -23,7 +23,7 @@ class DocsisEvent {
 
         // If the last log entry is null, then set the latest log event to it
         if (lastLogEntry == null) {
-            lastLogEntry = docsisEvents[19]
+            lastLogEntry = docsisEvents[0]
         }
 
         // Delete entries in the log that we have already outputted
@@ -37,7 +37,7 @@ class DocsisEvent {
         // Output the log to stdout
         for (i in docsisEvents.size - 1 downTo 0) {
             var it = docsisEvents[i]
-            var logMessage = "[${it.time}] msg=${it.event}"
+            var logMessage = "datetime=\"${it.time}\" type=docsis-event msg=\"${it.event}\""
             when (it.priority) {
                 "error" -> logger.error(logMessage)
                 "critical" -> logger.warn(logMessage)
