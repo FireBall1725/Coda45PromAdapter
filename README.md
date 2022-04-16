@@ -1,4 +1,4 @@
-#Coda45 Prometheus Adapter
+# Coda45 Prometheus Adapter
 
 This is a simple micronaut application written in kotlin that scrapes the Coda45 API to get events and connection stats.
 
